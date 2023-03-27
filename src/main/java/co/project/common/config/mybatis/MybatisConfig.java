@@ -17,7 +17,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(basePackages = {"co.study.recap.repository"}, sqlSessionFactoryRef = "sqlSessionFactory")
+@MapperScan(basePackages = {"co.project.recap.repository"}, sqlSessionFactoryRef = "sqlSessionFactory")
 public class MybatisConfig {
 
     @Autowired
