@@ -16,8 +16,8 @@
     <!-- FILE Appender -->
     <appender name="LOG_INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_DIR}/info-%d{yyyyMMddHH}.log</fileNamePattern>
-            <maxHistory>30</maxHistory> <!-- 시간별 백업파일의 보관기간(3일) -->
+            <fileNamePattern>${LOG_DIR}/info-%d{yyyyMMdd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory> <!-- 시간별 백업파일의 보관기간(30일) -->
         </rollingPolicy>
         <encoder>
             <charset>utf-8</charset>
@@ -27,8 +27,8 @@
 
     <appender name="LOG_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_DIR}/error-%d{yyyyMMddHH}.log</fileNamePattern>
-            <maxHistory>30</maxHistory> <!-- 시간별 백업파일의 보관기간(3일) -->
+            <fileNamePattern>${LOG_DIR}/error-%d{yyyyMMdd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory> <!-- 시간별 백업파일의 보관기간(30일) -->
         </rollingPolicy>
         <encoder>
             <charset>utf-8</charset>
