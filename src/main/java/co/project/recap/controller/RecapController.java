@@ -19,6 +19,17 @@ public class RecapController {
     @Autowired
     RecapService recapService;
 
+    @GetMapping("test2")
+    public String test2(){
+
+        TestReqDTO testRequest = TestReqDTO.builder()
+                .message("테스트입니다.")
+                .build();
+
+        return "hello";
+
+    }
+
     @GetMapping("test")
     public Response test(){
 
