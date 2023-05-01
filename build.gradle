@@ -1,6 +1,7 @@
 plugins {
     id 'org.springframework.boot' version '2.6.2'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id "com.github.node-gradle.node" version "4.0.0" /* node추가 23.05.01 간승기 */
     id 'java'
     id 'war'
 }
@@ -12,7 +13,11 @@ sourceCompatibility = '17'
 war { enabled = false }
 repositories {
     mavenCentral()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
 }
+
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -36,7 +41,7 @@ dependencies {
     implementation 'com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.3'
 
     // spring-security-crypto
-    implementation 'org.springframework.security:spring-security-crypto:5.5.2'
+    implementation 'org.springframework.security:spring-security-crypto:6.0.2'
 
     // validation
     implementation 'org.springframework.boot:spring-boot-starter-validation'
@@ -54,11 +59,20 @@ dependencies {
 
     // google
     implementation 'com.google.guava:guava:31.1-jre'
+
+    // npm node
+    implementation 'com.github.node-gradle:gradle-node-plugin:4.0.0'
 }
+
+apply plugin: "com.github.node-gradle.node"
+
+
 
 test {
     useJUnitPlatform()
 }
+
+
 
 
 ext.profile = (!project.hasProperty('profile') || !profile) ? 'dev' : profile
